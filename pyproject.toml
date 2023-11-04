@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools >=67.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "x-briefcase-plugin-test"
+version = "0.0.1"
+authors = [{name="Russell Martin"}]
+description = "A sample Briefcase plugin."
+license = {text = "BSD-3-Clause"}
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: New BSD",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "briefcase >=0.3.16",
+    "toml",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/rmartin16/briefcase-plugin-test"
+
+[project.entry-points."briefcase.bootstraps"]
+"Toga Automation" = "briefcase_plugin_test.toga:TogaAutomationBootstrap"
+"PySide6 Automation" = "briefcase_plugin_test.pyside6:PySide6AutomationBootstrap"
+"Pygame Automation" = "briefcase_plugin_test.pygame:PygameAutomationBootstrap"
+"PursuedPyBear Automation" = "briefcase_plugin_test.pursuedpybear:PursuedPyBearAutomationBootstrap"
